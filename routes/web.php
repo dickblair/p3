@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/advice/{package}', function ($package)
+{
+    return 'This is the insurance view for '.$package;
+});
+
+Route::get('/advice/', 'AdviceController@index');
+
+Route::get('/', function ()
+{
     return view('welcome');
 });
