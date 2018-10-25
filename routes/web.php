@@ -16,9 +16,15 @@ Route::get('/advice/{package}', function ($package)
     return 'This is the insurance view for '.$package;
 });
 
-Route::get('/advice/', 'AdviceController@index');
+Route::get('/practice/{n?}', 'PracticeController@index');
+
+Route::get('/contact/', 'AdviceController@show');
+
+Route::get('/consult/', 'AdviceController@index');
 
 Route::get('/', function ()
 {
     return view('welcome');
 });
+
+

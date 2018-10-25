@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 
 class AdviceController extends Controller
 {
-    public function index()
+    public function index($title = 'first default title')
     {
-        return 'Here is the advice you requested';
+        return view('advice.title') -> with(['title' => $title]);
     }
 
-    public function show()
+    public function show($title = 'second default title')
     {
-        return 'You are seeing all the advice';
+        return view('advice.contact') ->with(['title' => $title]);
     }
 }
